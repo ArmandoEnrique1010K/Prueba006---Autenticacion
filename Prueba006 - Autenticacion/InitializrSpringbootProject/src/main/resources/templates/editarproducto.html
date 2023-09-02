@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Editar un producto</h1>
+        <form th:action="@{/productos/editar/{id} (id = ${productoEntity.id})}" th:object="${productoEntity}" method="POST">
+            <div>
+                <label>ID: </label>
+                <input type="text" name="id" th:field="*{id}" disabled>
+            </div>
+            <div>
+                <label>Nombre: </label>
+                <input type="text" name="nombre" th:field="*{nombre}"> 
+            </div>
+            <div>
+                <label>Precio: </label>
+                <input type="text" name="precio" th:field="*{precio}"> 
+            </div>
+            <div>
+                <button type="input">Guardar</button>
+            </div>
+        </form>
+    </body>
+</html>

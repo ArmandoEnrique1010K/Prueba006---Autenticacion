@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Productos</h1>
+        <div>
+            <a th:href="@{/productos/nuevo}">Crear producto</a>
+        </div>
+        <br>
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Estado</th>
+                <th>Opciones</th>
+            </tr>
+            <tr th:each="registro : ${productos}">
+                <td th:text="${registro.id}"></td>
+                <td th:text="${registro.nombre}"></td>
+                <td th:text="${registro.precio}"></td>
+                <td th:text="${registro.estado}"></td>
+                <td>
+                    <div>
+                        <a th:href="@{/productos/editar/{id} (id = ${registro.id})}">Editar</a>
+                    </div>
+                    <div>
+                        <a th:href="@{/productos/cambiarestadofalse/{id} (id = ${registro.id})}">Inhabilitar</a>
+                    </div>
+                    <div>
+                        <a th:href="@{/productos/eliminardefinitivamente/{id} (id = ${registro.id})}">Eliminar</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
