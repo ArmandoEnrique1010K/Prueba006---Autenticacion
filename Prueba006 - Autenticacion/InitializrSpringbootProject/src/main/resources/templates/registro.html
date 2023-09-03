@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Registro de nuevo usuario</h1>
+
+        <form th:action="@{/registro}" method="POST" th:object="${usuario}">
+            <div>
+                <label>Nombre: </label>
+                <input type="text" name="nombre" th:field="*{nombre}">
+            </div>
+            <div>
+                <label>Apellido: </label>
+                <input type="text" name="apellido" th:field="*{apellido}">
+            </div>
+            <div>
+                <label>Email: </label>
+                <input type="email" name="email" th:field="*{email}">
+            </div>
+            <div>
+                <label>Contraseña: </label>
+                <input type="password" name="password" th:field="*{password}">
+            </div>
+            <div>
+                <button type="submit">Registrar</button>
+            </div>
+        </form>
+        
+        <div>
+            <div>Mensaje: </div>
+            <!-- SI EL PARAMETRO "exito" APARECE EN LA URL -->
+            <div th:if="${param.exito}">
+                <div>Se ha registrado correctamente a la aplicación</div>
+            </div>
+        </div>
+    </body>
+</html>

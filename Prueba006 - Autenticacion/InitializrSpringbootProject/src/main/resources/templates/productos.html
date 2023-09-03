@@ -8,6 +8,12 @@
     <body>
         <h1>Productos</h1>
         <div>
+            <!-- MOSTRAR... -->
+            Correo del usuario actual: <span th:text="${#authentication.principal.username}"></span>
+        </div>
+        <br>
+        <!-- MOSTRAR EL ELEMENTO SI EL USUARIO REGISTRADO TIENE EL ROL DE ADMINISTRADOR-->
+        <div th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}">
             <a th:href="@{/productos/nuevo}">Crear producto</a>
         </div>
         <br>
@@ -17,14 +23,17 @@
                 <th>Nombre</th>
                 <th>Precio</th>
                 <th>Estado</th>
-                <th>Opciones</th>
+                <!-- MOSTRAR EL ELEMENTO SI EL USUARIO REGISTRADO TIENE EL ROL DE ADMINISTRADOR-->
+                <th th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}">Opciones</th>
             </tr>
             <tr th:each="registro : ${productos}">
                 <td th:text="${registro.id}"></td>
                 <td th:text="${registro.nombre}"></td>
                 <td th:text="${registro.precio}"></td>
                 <td th:text="${registro.estado}"></td>
-                <td>
+                
+                <!-- MOSTRAR EL ELEMENTO SI EL USUARIO REGISTRADO TIENE EL ROL DE ADMINISTRADOR-->
+                <td th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}">
                     <div>
                         <a th:href="@{/productos/editar/{id} (id = ${registro.id})}">Editar</a>
                     </div>
@@ -37,5 +46,8 @@
                 </td>
             </tr>
         </table>
+        <div>
+            <a th:href="@{/logout}">Cerrar sesion</a>
+        </div>
     </body>
 </html>
