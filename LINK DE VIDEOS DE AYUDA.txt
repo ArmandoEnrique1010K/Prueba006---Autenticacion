@@ -1,0 +1,2 @@
+Inicio de sesión y registro de usuarios con Spring Security + Thymeleaf + MySQL y Bootstrap
+https://www.youtube.com/watch?v=0wTsLRxS3gA&ab_channel=LaTecnolog%C3%ADaAvanza
