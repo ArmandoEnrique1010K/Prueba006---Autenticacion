@@ -1,3 +1,5 @@
 # Prueba006---Autenticacion
 Autenticar un usuario y un administrador con Spring Boot 3, JDK 17 y Spring Security 6
-- NOTA: CHATGPT NO SIRVE..., PUES SOLO DA RESULTADOS OBSOLETOS CON SPRING SECURITY 5... :(
+- El usuario se puede registrar y luego puede iniciar sesion solamente como rol de "USER".
+- TODAVIA ME FALTA AGREGAR UNA MANERA EN QUE UN ADMINISTRADOR SE PUEDA REGISTRAR...
+- NOTA: CHATGPT SIRVE PARA ALGO..., APARTE DE LOS RESULTADOS OBSOLETOS CON SPRING SECURITY 5, PUEDE DAR RESULTADOS PARA COMPLEMENTAR ALGO...
