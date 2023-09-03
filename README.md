@@ -5,4 +5,5 @@ Autenticar un usuario y un administrador con Spring Boot 3, JDK 17 y Spring Secu
 - Para cambiar el rol un usuario de "USER" a "ADMIN" se tiene que hacer una modificacion en la tabla "rol", tiene algo que ver con el ID del usuario.
 - Los usuarios con el rol de "ADMIN", pueden modificar los productos.
 - ...Quizas esta sea la forma más simple de implementar un sistema de registro y login en una aplicación web.
-- NOTA: CHATGPT SIRVE PARA ALGO..., APARTE DE LOS RESULTADOS OBSOLETOS CON SPRING SECURITY 5, PUEDE DAR RESULTADOS PARA COMPLEMENTAR ALGO...
+
+- NOTA: CHATGPT SIRVE PARA ALGO..., APARTE DE LOS RESULTADOS OBSOLETOS CON SPRING SECURITY 5 COMO "WebSecurityConfigurerAdapter" Y LOS "antMatchers", PUEDE DAR RESULTADOS PARA COMPLEMENTAR ALGO
